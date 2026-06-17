@@ -1,9 +1,9 @@
-# Territorial-Asset-Management-Regional-Information-for-Estate-Ledgers 
-# Claims of Tamriel — Project Management Portfolio
+# Claims of Tamriel — Project Management & Software Engineering Portfolio
 
 **Course:** B1874 – Project Management and Software Engineering for Cultural Heritage
+**Instructor:** Prof. Paolo Bonora
 **University:** University of Bologna – DHDK
-**Date:** June 2026
+**Date:** May 2026
 
 ---
 
@@ -106,6 +106,8 @@ Validation activities ensured that project outcomes satisfied both user requirem
 
 ---
 
-## Repository Purpose
+## Repository Purpose and Structure
 
-This repository serves as the final project management portfolio for the PMSE course and demonstrates the planning, design, implementation, testing, and documentation of the *Claims of Tamriel* project.
+This repository serves as the final **Project Management & Software Engineering** (PMSE) portfolio for the B1874 course at University of Bologna, completed in May 2026. It documents the planning, design, implementation, testing, and delivery of the *Claims of Tamriel* ontology project.
+
+**Note:** This portfolio repository consolidates the complete project management deliverables for *Claims of Tamriel*, demonstrating the full software engineering lifecycle applied to a Digital Humanities knowledge representation project.

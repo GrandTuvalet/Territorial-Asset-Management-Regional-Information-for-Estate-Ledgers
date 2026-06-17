@@ -492,6 +492,107 @@
     padding: 0 6px;
   }
 
+  /* GANTT CHART */
+  .gantt-chart {
+    width: 100%;
+    max-width: 1000px;
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 16px;
+  }
+  .gantt-header {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .gantt-header-label {
+    font-size: 11px;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .gantt-weeks {
+    display: grid;
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    gap: 2px;
+  }
+  .gantt-week-num {
+    font-size: 9px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.04);
+  }
+  .gantt-row {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .gantt-task {
+    font-size: 12px;
+    color: var(--text);
+    font-family: 'Crimson Text', serif;
+    line-height: 1.4;
+  }
+  .gantt-bars {
+    display: grid;
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    gap: 2px;
+    min-height: 32px;
+    align-items: center;
+  }
+  .gantt-bar {
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 28px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  .gantt-bar.s1 { background: linear-gradient(135deg, #F4B06A, #D7894A); grid-column: 1 / 4; }
+  .gantt-bar.s2 { background: linear-gradient(135deg, #6DB8E4, #4F8CC4); grid-column: 4 / 7; }
+  .gantt-bar.s3 { background: linear-gradient(135deg, #7CC796, #4E9D6A); grid-column: 7 / 10; }
+  .gantt-bar.s4 { background: linear-gradient(135deg, #CB84D8, #9962B0); grid-column: 10 / 12; }
+  .gantt-bar.s5 { background: linear-gradient(135deg, #E8736E, #C95258); grid-column: 12 / 14; }
+  .gantt-legend {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+  .legend-box {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+  }
+  .legend-box.s1 { background: #D7894A; }
+  .legend-box.s2 { background: #4F8CC4; }
+  .legend-box.s3 { background: #4E9D6A; }
+  .legend-box.s4 { background: #9962B0; }
+  .legend-box.s5 { background: #C95258; }
+
   /* SPARQL block */
   .code-block {
     background: rgba(0,0,0,0.4);
@@ -694,7 +795,7 @@
 <div class="slide slide-cover active" id="s1">
   <div class="slide-inner" style="justify-content:center;align-items:center;">
     <div class="emblem">⚔</div>
-    <div class="slide-label">Knowledge Representation & Knowledge Extraction · University of Bologna</div>
+    <div class="slide-label">B1874 – Project Management and Software Engineering for Cultural Heritage · University of Bologna</div>
     <h1>Claims of Tamriel</h1>
     <div class="divider"></div>
     <p class="subtitle">An OWL Ontology of Contested Narratives, Rival Factions, and Epistemic Conflict<br>in The Elder Scrolls V: Skyrim</p>
@@ -706,7 +807,7 @@
       <span class="tag">SKOS</span>
       <span class="tag">Schema.org</span>
     </div>
-    <div class="course-badge">📁 Atakan Kayı · Ceyda Uyar · Yiğit Ak</div>
+    <div class="course-badge">�‍🏫 Prof. Paolo Bonora · �📁 Atakan Kayı · Ceyda Uyar · Yiğit Ak</div>
     <div style="margin-top:20px;" class="stats">
       <div class="stat"><span class="num">7</span><span class="lbl">OWL Classes</span></div>
       <div class="stat"><span class="num">16</span><span class="lbl">Claims</span></div>
@@ -729,7 +830,7 @@
         <h3>📋 Project Identity</h3>
         <ul>
           <li><b>Product:</b> Claims of Tamriel — Cross-Platform RPG Knowledge Base & Moral Compass</li>
-          <li><b>Course:</b> KRKE — University of Bologna, A.Y. 2025/2026</li>
+          <li><b>Course:</b> B1874 – Project Management and Software Engineering for Cultural Heritage — University of Bologna, A.Y. 2025/2026</li>
           <li><b>PM:</b> Atakan Kayı</li>
           <li><b>Start:</b> Week 1 · <b>End:</b> Week 14 (May)</li>
           <li><b>Version:</b> v1.0 — 2026-04-28</li>
@@ -787,30 +888,73 @@
 <div class="slide" id="s3">
   <div class="slide-inner">
     <div class="slide-label">Deliverable 2 of 8</div>
-    <h2>Gantt Diagram</h2>
+    <h2>Gantt Diagram — Excel-Aligned Sprint Plan</h2>
     <div class="divider"></div>
-    <p class="subtitle">14-week project schedule — May end deadline</p>
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 1–2</div><div class="tl-label">Project Setup &amp; Charter</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 3–4</div><div class="tl-label">Requirements &amp; SRS</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 5–6</div><div class="tl-label">Ontology Core Design</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 7–8</div><div class="tl-label">Claim Modelling &amp; Axioms</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 9–10</div><div class="tl-label">SPARQL &amp; Reasoning</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 11–12</div><div class="tl-label">Web Interface</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-week">Wk 13</div><div class="tl-label">Testing &amp; Validation</div></div>
-      <div class="tl-item"><div class="tl-dot" style="background:#C0392B;"></div><div class="tl-week">Wk 14</div><div class="tl-label">Final Delivery</div></div>
+    <p class="subtitle">12-week delivery plan with phases, sprint focus and the week-13 wrap-up described in the spreadsheet.</p>
+
+    <div class="gantt-chart">
+      <div class="gantt-header">
+        <div class="gantt-header-label">Phase / Sprint</div>
+        <div class="gantt-weeks">
+          <div class="gantt-week-num">W1</div>
+          <div class="gantt-week-num">W2</div>
+          <div class="gantt-week-num">W3</div>
+          <div class="gantt-week-num">W4</div>
+          <div class="gantt-week-num">W5</div>
+          <div class="gantt-week-num">W6</div>
+          <div class="gantt-week-num">W7</div>
+          <div class="gantt-week-num">W8</div>
+          <div class="gantt-week-num">W9</div>
+          <div class="gantt-week-num">W10</div>
+          <div class="gantt-week-num">W11</div>
+          <div class="gantt-week-num">W12</div>
+          <div class="gantt-week-num">W13</div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-task">Phase One — Research & Requirements</div>
+        <div class="gantt-bars"><div class="gantt-bar s1">W1–W3: Charter, user stories, SRS</div></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-task">Sprint 1 — Lore Research</div>
+        <div class="gantt-bars"><div class="gantt-bar s2">W3–W6: Skyrim lore scan, book classification, faction motivations</div></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-task">Sprint 2 — Synthesis & Ontology</div>
+        <div class="gantt-bars"><div class="gantt-bar s3">W7–W8: Item × claim cross-check, moral compass draft, ClaimType SKOS</div></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-task">Knowledge Population & Ontology</div>
+        <div class="gantt-bars"><div class="gantt-bar s4">W8–W10: OWL classes, restrictions, vocab alignments, individuals</div></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-task">Phase Three — Interface & Validation</div>
+        <div class="gantt-bars"><div class="gantt-bar s5">W10–W13: SPARQL, reasoner checks, usability, delivery prep</div></div>
+      </div>
+
+      <div class="gantt-legend">
+        <div class="legend-item"><span class="legend-box s1"></span> Phase One — Requirements</div>
+        <div class="legend-item"><span class="legend-box s2"></span> Sprint 1 — Lore Research</div>
+        <div class="legend-item"><span class="legend-box s3"></span> Sprint 2 — Synthesis</div>
+        <div class="legend-item"><span class="legend-box s4"></span> Ontology & Population</div>
+        <div class="legend-item"><span class="legend-box s5"></span> Interface & Validation</div>
+      </div>
     </div>
-    <div class="table-wrap" style="margin-top:14px;">
+
+    <div class="table-wrap" style="margin-top:16px;">
       <table>
-        <thead><tr><th>Phase</th><th>Deliverable</th><th>Owner</th><th>Duration</th></tr></thead>
+        <thead><tr><th>Phase/Sprint</th><th>Weeks</th><th>Focus</th><th>Main Deliverables</th><th>Owner</th></tr></thead>
         <tbody>
-          <tr><td>1 · Initiation</td><td>Project Charter</td><td>Atakan</td><td>Wk 1–2</td></tr>
-          <tr><td>2 · Requirements</td><td>SRS Document</td><td>All</td><td>Wk 3–4</td></tr>
-          <tr><td>3 · Core Ontology</td><td>Class hierarchy, object properties, disjoint axioms</td><td>Atakan + Yiğit</td><td>Wk 5–6</td></tr>
-          <tr><td>4 · Claims</td><td>16 claims, 8 dispute pairs, conflict relations</td><td>Atakan</td><td>Wk 7–8</td></tr>
-          <tr><td>5 · SPARQL</td><td>CQ1–CQ5, reasoner validation</td><td>Ceyda + Yiğit</td><td>Wk 9–10</td></tr>
-          <tr><td>6 · Interface</td><td>index.html, War Table, Moral Compass</td><td>Yiğit</td><td>Wk 11–12</td></tr>
-          <tr><td>7 · V&V</td><td>Testing methodology, test case, use case</td><td>All</td><td>Wk 13</td></tr>
+          <tr><td>Phase One</td><td>W1–W3</td><td>Research & Requirements</td><td>Stakeholder analysis, charter, user stories, SRS, sign-off</td><td>Atakan / All</td></tr>
+          <tr><td>Sprint 1</td><td>W3–W6</td><td>Lore Research</td><td>Skyrim lore scan, book reading, faction histories</td><td>All / Ceyda / Atakan</td></tr>
+          <tr><td>Sprint 2</td><td>W7–W8</td><td>Synthesis & Ontology</td><td>Claim cross-check, moral compass, ClaimType SKOS taxonomy</td><td>Ceyda / Atakan</td></tr>
+          <tr><td>Knowledge Population</td><td>W8–W10</td><td>Ontology Engineering</td><td>OWL classes, restrictions, FOAF/PROV alignments, individuals</td><td>Atakan / Ceyda</td></tr>
+          <tr><td>Phase Three</td><td>W10–W13</td><td>Interface & Validation</td><td>SPARQL CQs, reasoner consistency, usability checks, final delivery</td><td>All</td></tr>
         </tbody>
       </table>
     </div>
@@ -1181,7 +1325,7 @@
       <div class="stat"><span class="num">11</span><span class="lbl">ClaimTypes</span></div>
     </div>
     <p style="margin-top:20px;font-style:italic;color:var(--text-muted);font-family:'Crimson Text',serif;font-size:16px;">
-      Knowledge Representation & Knowledge Extraction · University of Bologna · A.Y. 2025/2026
+      B1874 – Project Management and Software Engineering for Cultural Heritage · University of Bologna · Prof. Paolo Bonora · A.Y. 2025/2026
     </p>
   </div>
 </div>
