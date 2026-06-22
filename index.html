@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0045)file:///C:/Users/ataka/Downloads/index_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claims of Tamriel — Project Deliverables</title>
+<title>Claims of Tamriel — Project Presentation</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -21,7 +21,6 @@
     --text: #D4C9A8;
     --text-muted: #8A7E6A;
     --border: rgba(201,168,76,0.2);
-    --slide-w: 1200px;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -35,13 +34,8 @@
     width: 100vw;
   }
 
-  /* SLIDES */
-  .slideshow {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
+  /* ── SLIDESHOW ── */
+  .slideshow { width:100%; height:100vh; position:relative; overflow:hidden; }
 
   .slide {
     position: absolute;
@@ -56,746 +50,406 @@
     padding: 40px 60px;
     background: var(--dark2);
   }
+  .slide.active { opacity:1; pointer-events:all; }
 
-  .slide.active {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  /* bg textures */
   .slide::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content:'';
+    position:absolute; inset:0;
     background-image:
       radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 20%, rgba(42,58,106,0.12) 0%, transparent 50%);
-    pointer-events: none;
+    pointer-events:none;
   }
 
-  /* SLIDE TITLE */
+  /* ── TYPOGRAPHY ── */
   .slide-label {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    opacity: 0.8;
+    font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px;
+    color:var(--gold); text-transform:uppercase; margin-bottom:12px; opacity:0.8;
   }
-
   h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(28px, 4vw, 52px);
-    font-weight: 900;
-    color: var(--gold-light);
-    text-align: center;
-    line-height: 1.15;
-    margin-bottom: 8px;
-    text-shadow: 0 0 40px rgba(201,168,76,0.3);
+    font-family:'Cinzel',serif; font-size:clamp(28px,4vw,52px); font-weight:900;
+    color:var(--gold-light); text-align:center; line-height:1.15; margin-bottom:8px;
+    text-shadow:0 0 40px rgba(201,168,76,0.3);
   }
-
   h2 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(18px, 2.5vw, 30px);
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 20px;
-    text-align: center;
+    font-family:'Cinzel',serif; font-size:clamp(18px,2.5vw,30px); font-weight:700;
+    color:var(--gold); margin-bottom:20px; text-align:center;
   }
-
   h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gold-light);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    font-family:'Cinzel',serif; font-size:15px; font-weight:600;
+    color:var(--gold-light); letter-spacing:1px; margin-bottom:10px;
   }
-
   .subtitle {
-    font-family: 'Crimson Text', serif;
-    font-size: clamp(14px, 1.8vw, 20px);
-    color: var(--text-muted);
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 30px;
-    max-width: 700px;
+    font-family:'Crimson Text',serif; font-size:clamp(14px,1.8vw,20px);
+    color:var(--text-muted); text-align:center; font-style:italic;
+    margin-bottom:30px; max-width:700px;
   }
-
   p, li {
-    font-family: 'Crimson Text', serif;
-    font-size: clamp(13px, 1.3vw, 17px);
-    line-height: 1.7;
-    color: var(--text);
+    font-family:'Crimson Text',serif; font-size:clamp(13px,1.3vw,17px);
+    line-height:1.7; color:var(--text);
   }
 
-  /* DIVIDER */
+  /* ── DIVIDER ── */
   .divider {
-    width: 120px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
-    margin: 16px auto;
+    width:120px; height:1px;
+    background:linear-gradient(to right, transparent, var(--gold), transparent);
+    margin:16px auto;
   }
 
-  /* CARDS GRID */
-  .cards {
-    display: grid;
-    gap: 16px;
-    width: 100%;
-    max-width: 1100px;
-  }
-  .cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .cards.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  /* ── CARDS ── */
+  .cards { display:grid; gap:16px; width:100%; max-width:1100px; }
+  .cards.cols-2 { grid-template-columns:repeat(2,1fr); }
+  .cards.cols-3 { grid-template-columns:repeat(3,1fr); }
+  .cards.cols-4 { grid-template-columns:repeat(4,1fr); }
 
   .card {
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px 22px;
-    position: relative;
-    transition: border-color 0.3s;
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:8px; padding:20px 22px; position:relative; transition:border-color 0.3s;
   }
-
   .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-    border-radius: 8px 0 0 8px;
+    content:''; position:absolute; top:0; left:0;
+    width:3px; height:100%; border-radius:8px 0 0 8px;
   }
+  .card.gold::before  { background:var(--gold); }
+  .card.blue::before  { background:var(--blue-light); }
+  .card.red::before   { background:var(--red-light); }
+  .card.teal::before  { background:#2A8A7A; }
+  .card.purple::before{ background:#7A4A9A; }
+  .card.green::before { background:#3A8A5A; }
+  .card.gray::before  { background:#5A5A7A; }
+  .card h3 { margin-bottom:8px; }
+  .card p  { font-size:clamp(12px,1.1vw,15px); }
+  .card ul { padding-left:16px; }
+  .card li { font-size:clamp(11px,1vw,14px); line-height:1.6; }
 
-  .card.gold::before { background: var(--gold); }
-  .card.blue::before { background: var(--blue-light); }
-  .card.red::before { background: var(--red-light); }
-  .card.teal::before { background: #2A8A7A; }
-  .card.purple::before { background: #7A4A9A; }
-
-  .card h3 { margin-bottom: 8px; }
-  .card p { font-size: clamp(12px, 1.1vw, 15px); }
-  .card ul { padding-left: 16px; }
-  .card li { font-size: clamp(11px, 1vw, 14px); line-height: 1.6; }
-
-  /* TAG */
+  /* ── TAG ── */
   .tag {
-    display: inline-block;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 20px;
-    font-size: 11px;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 1px;
-    color: var(--gold);
-    padding: 3px 12px;
-    margin: 3px 3px;
+    display:inline-block; background:rgba(201,168,76,0.12);
+    border:1px solid rgba(201,168,76,0.3); border-radius:20px;
+    font-size:11px; font-family:'Inter',sans-serif; letter-spacing:1px;
+    color:var(--gold); padding:3px 12px; margin:3px;
   }
-  .tag.blue { background: rgba(61,82,153,0.2); border-color: rgba(61,82,153,0.5); color: #8A9FD4; }
-  .tag.red { background: rgba(192,57,43,0.2); border-color: rgba(192,57,43,0.5); color: #D4776A; }
-  .tag.teal { background: rgba(42,138,122,0.2); border-color: rgba(42,138,122,0.5); color: #6AC5B8; }
+  .tag.blue  { background:rgba(61,82,153,0.2);  border-color:rgba(61,82,153,0.5);  color:#8A9FD4; }
+  .tag.red   { background:rgba(192,57,43,0.2);  border-color:rgba(192,57,43,0.5);  color:#D4776A; }
+  .tag.teal  { background:rgba(42,138,122,0.2); border-color:rgba(42,138,122,0.5); color:#6AC5B8; }
+  .tag.green { background:rgba(58,138,90,0.2);  border-color:rgba(58,138,90,0.5);  color:#7AC5A0; }
 
-  /* TABLE */
-  .table-wrap { width: 100%; max-width: 1000px; overflow-x: auto; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: clamp(11px, 1vw, 14px);
-  }
+  /* ── TABLE ── */
+  .table-wrap { width:100%; max-width:1100px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:clamp(11px,1vw,14px); }
   th {
-    background: var(--dark3);
-    border-bottom: 1px solid var(--gold);
-    padding: 10px 14px;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--gold);
-    text-align: left;
+    background:var(--dark3); border-bottom:1px solid var(--gold);
+    padding:10px 14px; font-family:'Cinzel',serif; font-size:11px;
+    letter-spacing:1px; color:var(--gold); text-align:left;
   }
   td {
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-    padding: 9px 14px;
-    color: var(--text);
-    font-family: 'Crimson Text', serif;
-    font-size: clamp(12px, 1vw, 15px);
-    line-height: 1.5;
+    border-bottom:1px solid rgba(201,168,76,0.1); padding:9px 14px;
+    color:var(--text); font-family:'Crimson Text',serif;
+    font-size:clamp(12px,1vw,15px); line-height:1.5;
   }
-  tr:hover td { background: rgba(201,168,76,0.04); }
+  tr:hover td { background:rgba(201,168,76,0.04); }
 
-  /* STAT BOXES */
-  .stats {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1000px;
-  }
+  /* ── STATS ── */
+  .stats { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; max-width:1100px; }
   .stat {
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 22px;
-    text-align: center;
-    min-width: 110px;
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:8px; padding:16px 22px; text-align:center; min-width:110px;
   }
   .stat .num {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(22px, 2.5vw, 34px);
-    font-weight: 900;
-    color: var(--gold-light);
-    display: block;
+    font-family:'Cinzel',serif; font-size:clamp(22px,2.5vw,34px); font-weight:900;
+    color:var(--gold-light); display:block;
   }
   .stat .lbl {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
-    margin-top: 4px;
-    display: block;
+    font-size:11px; color:var(--text-muted); letter-spacing:1px;
+    text-transform:uppercase; font-family:'Inter',sans-serif; margin-top:4px; display:block;
   }
 
-  /* DISPUTE PAIR */
-  .dispute {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 18px;
-    width: 100%;
-    max-width: 1000px;
-  }
-  .dispute .side {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-family: 'Crimson Text', serif;
-    font-size: 13px;
-    line-height: 1.5;
-  }
-  .dispute .side.a {
-    background: rgba(139,26,26,0.2);
-    border: 1px solid rgba(192,57,43,0.3);
-  }
-  .dispute .side.b {
-    background: rgba(42,58,106,0.3);
-    border: 1px solid rgba(61,82,153,0.4);
-  }
-  .dispute .rel {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  /* ARCHITECTURE BOX */
-  .arch {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-    max-width: 1100px;
-    align-items: stretch;
-  }
-  .arch-layer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-  }
-  .arch-box {
-    width: 100%;
-    border-radius: 8px;
-    padding: 12px 14px;
-    text-align: center;
-    border: 1px solid;
-    position: relative;
-  }
-  .arch-box h3 { font-size: 12px; margin-bottom: 6px; }
-  .arch-box p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
-  .arch-box.blue { background: rgba(61,82,153,0.12); border-color: rgba(61,82,153,0.4); }
-  .arch-box.gold { background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.3); }
-  .arch-box.green { background: rgba(42,138,100,0.1); border-color: rgba(42,138,100,0.4); }
-  .arch-box.orange { background: rgba(180,100,40,0.1); border-color: rgba(180,100,40,0.4); }
-  .arch-box.gray { background: rgba(80,80,100,0.1); border-color: rgba(80,80,100,0.3); }
-  .arch-arrow {
-    display: flex;
-    align-items: center;
-    color: var(--gold);
-    font-size: 20px;
-    opacity: 0.6;
-    padding-top: 20px;
-  }
-
-  /* NAVIGATION */
+  /* ── NAVIGATION ── */
   nav {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: rgba(10,10,15,0.92);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    border-radius: 40px;
-    padding: 10px 24px;
-    z-index: 100;
+    position:fixed; bottom:28px; left:50%; transform:translateX(-50%);
+    display:flex; align-items:center; gap:16px;
+    background:rgba(10,10,15,0.92); backdrop-filter:blur(10px);
+    border:1px solid var(--border); border-radius:40px; padding:10px 24px; z-index:100;
   }
   nav button {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    color: var(--gold);
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
+    background:none; border:1px solid var(--border); border-radius:50%;
+    width:34px; height:34px; color:var(--gold); cursor:pointer; font-size:16px;
+    display:flex; align-items:center; justify-content:center; transition:all 0.2s;
   }
-  nav button:hover {
-    background: rgba(201,168,76,0.15);
-    border-color: var(--gold);
-  }
-  .slide-counter {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-  }
+  nav button:hover { background:rgba(201,168,76,0.15); border-color:var(--gold); }
+  .slide-counter { font-family:'Cinzel',serif; font-size:12px; color:var(--text-muted); letter-spacing:2px; }
 
-  /* PROGRESS */
+  /* ── PROGRESS ── */
   .progress-bar {
-    position: fixed;
-    top: 0; left: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--gold), var(--gold-light));
-    transition: width 0.4s ease;
-    z-index: 200;
+    position:fixed; top:0; left:0; height:2px;
+    background:linear-gradient(to right, var(--gold), var(--gold-light));
+    transition:width 0.4s ease; z-index:200;
   }
 
-  /* SLIDE DOTS */
+  /* ── DOTS ── */
   .dots {
-    position: fixed;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 100;
+    position:fixed; right:24px; top:50%; transform:translateY(-50%);
+    display:flex; flex-direction:column; gap:8px; z-index:100;
   }
   .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(201,168,76,0.25);
-    cursor: pointer;
-    transition: all 0.3s;
+    width:6px; height:6px; border-radius:50%;
+    background:rgba(201,168,76,0.25); cursor:pointer; transition:all 0.3s;
   }
-  .dot.active {
-    background: var(--gold);
-    transform: scale(1.4);
-  }
+  .dot.active { background:var(--gold); transform:scale(1.4); }
 
-  /* COVER SPECIAL */
-  .slide-cover {
-    background: var(--dark);
-    position: relative;
-  }
+  /* ── COVER ── */
+  .slide-cover { background:var(--dark); }
   .slide-cover::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 70%);
-    pointer-events: none;
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events:none;
   }
-
-  .emblem {
-    font-size: 56px;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 0 20px rgba(201,168,76,0.4));
-  }
-
+  .emblem { font-size:56px; margin-bottom:16px; filter:drop-shadow(0 0 20px rgba(201,168,76,0.4)); }
   .course-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    padding: 8px 20px;
-    font-size: 12px;
-    font-family: 'Inter', sans-serif;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    margin-top: 24px;
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:30px; padding:8px 20px; font-size:12px; font-family:'Inter',sans-serif;
+    color:var(--text-muted); letter-spacing:1px; margin-top:24px;
   }
 
-  /* TIMELINE */
-  .timeline {
-    display: flex;
-    gap: 0;
-    width: 100%;
-    max-width: 1000px;
-    position: relative;
-  }
-  .tl-item {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    padding-top: 40px;
-  }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    top: 14px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
-  }
-  .tl-item:first-child::before { left: 50%; }
-  .tl-item:last-child::before { right: 50%; }
-  .tl-dot {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--gold);
-    border: 2px solid var(--dark2);
-    box-shadow: 0 0 10px rgba(201,168,76,0.5);
-  }
-  .tl-week {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-  .tl-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-    padding: 0 6px;
-  }
-
-  /* GANTT CHART */
-  .gantt-chart {
-    width: 100%;
-    max-width: 1000px;
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px;
-    margin-top: 16px;
-  }
-  .gantt-header {
-    display: grid;
-    grid-template-columns: 210px 1fr;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 14px;
-  }
-  .gantt-header-label {
-    font-size: 11px;
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .gantt-weeks {
-    display: grid;
-    grid-template-columns: repeat(13, minmax(0, 1fr));
-    gap: 2px;
-  }
-  .gantt-week-num {
-    font-size: 9px;
-    color: var(--text-muted);
-    text-align: center;
-    padding: 6px 0;
-    border-radius: 5px;
-    background: rgba(255,255,255,0.04);
-  }
-  .gantt-row {
-    display: grid;
-    grid-template-columns: 210px 1fr;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .gantt-task {
-    font-size: 12px;
-    color: var(--text);
-    font-family: 'Crimson Text', serif;
-    line-height: 1.4;
-  }
-  .gantt-bars {
-    display: grid;
-    grid-template-columns: repeat(13, minmax(0, 1fr));
-    gap: 2px;
-    min-height: 32px;
-    align-items: center;
-  }
-  .gantt-bar {
-    border-radius: 6px;
-    padding: 6px 8px;
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--dark);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 28px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  }
-  .gantt-bar.s1 { background: linear-gradient(135deg, #F4B06A, #D7894A); grid-column: 1 / 4; }
-  .gantt-bar.s2 { background: linear-gradient(135deg, #6DB8E4, #4F8CC4); grid-column: 4 / 7; }
-  .gantt-bar.s3 { background: linear-gradient(135deg, #7CC796, #4E9D6A); grid-column: 7 / 10; }
-  .gantt-bar.s4 { background: linear-gradient(135deg, #CB84D8, #9962B0); grid-column: 10 / 12; }
-  .gantt-bar.s5 { background: linear-gradient(135deg, #E8736E, #C95258); grid-column: 12 / 14; }
-  .gantt-legend {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 10px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-    margin-top: 12px;
-  }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    color: var(--text-muted);
-  }
-  .legend-box {
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-  }
-  .legend-box.s1 { background: #D7894A; }
-  .legend-box.s2 { background: #4F8CC4; }
-  .legend-box.s3 { background: #4E9D6A; }
-  .legend-box.s4 { background: #9962B0; }
-  .legend-box.s5 { background: #C95258; }
-
-  /* SPARQL block */
-  .code-block {
-    background: rgba(0,0,0,0.4);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 8px;
-    padding: 16px 20px;
-    font-family: 'Courier New', monospace;
-    font-size: clamp(10px, 0.9vw, 13px);
-    color: #A8D8A8;
-    width: 100%;
-    max-width: 800px;
-    line-height: 1.7;
-    overflow-x: auto;
-  }
-  .code-block .kw { color: #79B8FF; }
-  .code-block .fn { color: #E8C97A; }
-  .code-block .cm { color: #666; font-style: italic; }
-  .code-block .str { color: #F78C6C; }
-
-  /* CONFLICT VISUAL */
-  .conflict-viz {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 12px;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-  }
-  .claim-box {
-    padding: 14px 16px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  .claim-box.stormcloak {
-    background: rgba(139,26,26,0.2);
-    border: 1px solid rgba(192,57,43,0.4);
-  }
-  .claim-box.imperial {
-    background: rgba(42,58,106,0.3);
-    border: 1px solid rgba(61,82,153,0.4);
-  }
-  .claim-box .holder {
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 6px;
-  }
-  .claim-box .claim-text {
-    font-family: 'Crimson Text', serif;
-    font-size: 15px;
-    font-style: italic;
-  }
-  .conflict-rel {
-    text-align: center;
-  }
-  .conflict-rel .rel-name {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .conflict-rel .arrows {
-    color: var(--gold);
-    font-size: 18px;
-    opacity: 0.6;
-  }
-
-  /* LIST FANCY */
-  .fancy-list {
-    list-style: none;
-    width: 100%;
-    max-width: 900px;
-  }
-  .fancy-list li {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: clamp(12px, 1.1vw, 15px);
-  }
-  .fancy-list li:last-child { border-bottom: none; }
-  .fancy-list .li-num {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    font-size: 13px;
-    min-width: 24px;
-    margin-top: 2px;
-  }
-
-  /* USE CASE FLOW */
-  .flow {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    max-width: 800px;
-  }
-  .flow-step {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 10px 16px;
-  }
-  .flow-num {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: var(--gold);
-    min-width: 22px;
-  }
-  .flow-text {
-    font-family: 'Crimson Text', serif;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* ROLE TABLE special */
-  .role-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    width: 100%;
-    max-width: 1000px;
-  }
-  .role-card {
-    background: var(--dark3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 18px;
-    text-align: center;
-  }
-  .role-card .icon { font-size: 28px; margin-bottom: 10px; }
-  .role-card .name {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .role-card .role-desc {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-  .role-card .gh {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 11px;
-    color: rgba(201,168,76,0.5);
-    font-family: 'Inter', sans-serif;
-  }
-
-  /* SCROLL CONTENT */
+  /* ── SCROLL INNER ── */
   .slide-inner {
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    overflow-y: auto;
-    max-height: calc(100vh - 120px);
-    padding-bottom: 20px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(201,168,76,0.3) transparent;
+    width:100%; max-width:1100px;
+    display:flex; flex-direction:column; align-items:center; gap:16px;
+    overflow-y:auto; max-height:calc(100vh - 120px);
+    padding-bottom:20px; scrollbar-width:thin;
+    scrollbar-color:rgba(201,168,76,0.3) transparent;
+  }
+  ::-webkit-scrollbar { width:4px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:2px; }
+
+  /* ── GANTT ── */
+  .gantt-chart {
+    width:100%; max-width:1000px; background:var(--dark3);
+    border:1px solid var(--border); border-radius:12px; padding:18px; margin-top:16px;
+  }
+  .gantt-header { display:grid; grid-template-columns:210px 1fr; gap:12px; align-items:center; margin-bottom:14px; }
+  .gantt-header-label { font-size:11px; font-family:'Cinzel',serif; color:var(--gold); letter-spacing:1px; text-transform:uppercase; }
+  .gantt-weeks { display:grid; grid-template-columns:repeat(13,minmax(0,1fr)); gap:2px; }
+  .gantt-week-num { font-size:9px; color:var(--text-muted); text-align:center; padding:6px 0; border-radius:5px; background:rgba(255,255,255,0.04); }
+  .gantt-row { display:grid; grid-template-columns:210px 1fr; gap:12px; align-items:center; margin-bottom:10px; }
+  .gantt-task { font-size:12px; color:var(--text); font-family:'Crimson Text',serif; line-height:1.4; }
+  .gantt-bars { display:grid; grid-template-columns:repeat(13,minmax(0,1fr)); gap:2px; min-height:32px; align-items:center; }
+  .gantt-bar {
+    border-radius:6px; padding:6px 8px; font-size:10px; font-weight:600; color:var(--dark);
+    display:inline-flex; align-items:center; justify-content:center; text-align:center;
+    min-height:28px; box-shadow:0 4px 16px rgba(0,0,0,0.12);
+  }
+  .gantt-bar.s1 { background:linear-gradient(135deg,#F4B06A,#D7894A); grid-column:1/4; }
+  .gantt-bar.s2 { background:linear-gradient(135deg,#6DB8E4,#4F8CC4); grid-column:4/7; }
+  .gantt-bar.s3 { background:linear-gradient(135deg,#7CC796,#4E9D6A); grid-column:7/10; }
+  .gantt-bar.s4 { background:linear-gradient(135deg,#CB84D8,#9962B0); grid-column:10/12; }
+  .gantt-bar.s5 { background:linear-gradient(135deg,#E8736E,#C95258); grid-column:12/14; }
+  .gantt-legend { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; padding-top:14px; border-top:1px solid var(--border); margin-top:12px; }
+  .legend-item { display:flex; align-items:center; gap:8px; font-size:10px; color:var(--text-muted); }
+  .legend-box { width:14px; height:14px; border-radius:3px; }
+  .legend-box.s1{background:#D7894A;} .legend-box.s2{background:#4F8CC4;}
+  .legend-box.s3{background:#4E9D6A;} .legend-box.s4{background:#9962B0;} .legend-box.s5{background:#C95258;}
+
+  /* ── CODE ── */
+  .code-block {
+    background:rgba(0,0,0,0.4); border:1px solid rgba(201,168,76,0.2);
+    border-radius:8px; padding:16px 20px; font-family:'Courier New',monospace;
+    font-size:clamp(10px,0.9vw,13px); color:#A8D8A8; width:100%; max-width:800px;
+    line-height:1.7; overflow-x:auto;
+  }
+  .code-block .kw{color:#79B8FF;} .code-block .fn{color:#E8C97A;}
+  .code-block .cm{color:#666;font-style:italic;} .code-block .str{color:#F78C6C;}
+
+  /* ── FLOW ── */
+  .flow { display:flex; flex-direction:column; gap:8px; width:100%; max-width:800px; }
+  .flow-step {
+    display:flex; gap:14px; align-items:center;
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:6px; padding:10px 16px;
+  }
+  .flow-num { font-family:'Cinzel',serif; font-size:12px; color:var(--gold); min-width:22px; }
+  .flow-text { font-family:'Crimson Text',serif; font-size:14px; line-height:1.5; }
+
+  /* ── ROLE GRID ── */
+  .role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; width:100%; max-width:1000px; }
+  .role-card { background:var(--dark3); border:1px solid var(--border); border-radius:8px; padding:18px; text-align:center; }
+  .role-card .icon { font-size:28px; margin-bottom:10px; }
+  .role-card .name { font-family:'Cinzel',serif; font-size:13px; color:var(--gold); margin-bottom:6px; }
+  .role-card .role-desc { font-size:12px; color:var(--text-muted); line-height:1.6; }
+  .role-card .gh { display:inline-block; margin-top:8px; font-size:11px; color:rgba(201,168,76,0.5); font-family:'Inter',sans-serif; }
+
+  /* ── SCOPE TABLE ── */
+  .scope-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    width:100%; max-width:1100px;
+  }
+  .scope-col { border-radius:10px; overflow:hidden; border:1px solid var(--border); }
+  .scope-col-head {
+    padding:12px 20px; font-family:'Cinzel',serif; font-size:12px;
+    letter-spacing:2px; text-align:center;
+  }
+  .scope-col-head.in  { background:rgba(42,138,90,0.15);  color:#7AC5A0; border-bottom:1px solid rgba(42,138,90,0.3); }
+  .scope-col-head.out { background:rgba(192,57,43,0.15);  color:#D4776A; border-bottom:1px solid rgba(192,57,43,0.3); }
+  .scope-col ul { padding:16px 20px 16px 36px; background:var(--dark3); }
+  .scope-col li { font-size:13px; line-height:1.8; color:var(--text); }
+  .scope-col.in  li::marker { color:#7AC5A0; }
+  .scope-col.out li { list-style:none; padding-left:4px; }
+  .scope-col.out li::before { content:'✕  '; color:#D4776A; font-size:11px; }
+
+  /* ── WHAT WE BUILT cards ── */
+  .built-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+    width:100%; max-width:1100px;
+  }
+  .built-card {
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:10px; padding:20px; text-align:center;
+  }
+  .built-card .bc-icon { font-size:32px; margin-bottom:10px; }
+  .built-card .bc-title { font-family:'Cinzel',serif; font-size:13px; color:var(--gold); margin-bottom:8px; letter-spacing:1px; }
+  .built-card .bc-desc  { font-family:'Crimson Text',serif; font-size:13px; color:var(--text-muted); line-height:1.6; }
+
+  /* ── DIAGRAM SLIDE (full-page image) ── */
+  .diagram-slide-inner {
+    width:100%; height:100%;
+    display:flex; flex-direction:column; align-items:center;
+    padding:28px 48px 80px;
+    gap:0;
+  }
+  .diagram-title-row {
+    display:flex; flex-direction:column; align-items:center;
+    margin-bottom:14px;
+  }
+  .diagram-img-wrap {
+    flex:1; width:100%; display:flex; align-items:center; justify-content:center;
+    min-height:0;
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:12px; overflow:hidden; position:relative;
+  }
+  .diagram-img-wrap img {
+    max-width:100%; max-height:100%; object-fit:contain;
+    display:none;
+  }
+  .diagram-img-wrap img.visible { display:block; }
+  .diagram-caption {
+    margin-top:14px; width:100%; max-width:1100px;
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:10px; padding:16px 24px;
+    display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;
+  }
+  .diagram-caption .cap-section { flex:1; min-width:200px; }
+  .diagram-caption .cap-label {
+    font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px;
+    color:var(--gold); text-transform:uppercase; margin-bottom:6px;
+  }
+  .diagram-caption .cap-text { font-family:'Crimson Text',serif; font-size:13px; color:var(--text-muted); line-height:1.6; }
+
+  /* ── RISK TABLE ── */
+  .risk-table-wrap { width:100%; max-width:1100px; overflow-x:auto; }
+  .risk-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .risk-table th {
+    background:var(--dark3); border-bottom:1px solid var(--gold);
+    padding:10px 14px; font-family:'Cinzel',serif; font-size:10px;
+    letter-spacing:1.5px; color:var(--gold); text-align:left;
+  }
+  .risk-table td {
+    border-bottom:1px solid rgba(201,168,76,0.1); padding:9px 14px;
+    color:var(--text); font-family:'Crimson Text',serif; font-size:13px; line-height:1.4;
+    vertical-align:top;
+  }
+  .risk-table tr:hover td { background:rgba(201,168,76,0.04); }
+  .sev {
+    display:inline-block; border-radius:4px; padding:2px 10px;
+    font-size:11px; font-family:'Inter',sans-serif; font-weight:600; letter-spacing:0.5px;
+  }
+  .sev.high   { background:rgba(192,57,43,0.25);  color:#E88C84; border:1px solid rgba(192,57,43,0.4); }
+  .sev.medium { background:rgba(201,168,76,0.2);  color:#E8C97A; border:1px solid rgba(201,168,76,0.4); }
+  .sev.low    { background:rgba(42,138,90,0.2);   color:#7AC5A0; border:1px solid rgba(42,138,90,0.4); }
+
+  /* ── DELIVERABLE STATUS ── */
+  .deliv-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; width:100%; max-width:1100px; }
+  .deliv-card {
+    background:var(--dark3); border:1px solid var(--border);
+    border-radius:10px; padding:18px 16px; position:relative; text-align:center;
+  }
+  .deliv-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; border-radius:10px 0 0 10px; }
+  .deliv-card.done::before { background:#3A8A5A; }
+  .deliv-card.done { border-color:rgba(58,138,90,0.3); }
+  .deliv-num { font-family:'Cinzel',serif; font-size:11px; color:var(--text-muted); letter-spacing:2px; margin-bottom:8px; }
+  .deliv-name { font-family:'Cinzel',serif; font-size:13px; color:var(--gold); margin-bottom:6px; }
+  .deliv-desc { font-family:'Crimson Text',serif; font-size:12px; color:var(--text-muted); line-height:1.5; }
+  .deliv-badge {
+    display:inline-block; margin-top:10px; padding:3px 12px; border-radius:20px;
+    font-size:11px; font-family:'Inter',sans-serif; letter-spacing:1px;
+    background:rgba(58,138,90,0.2); color:#7AC5A0; border:1px solid rgba(58,138,90,0.4);
   }
 
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+  /* ── SETTINGS ── */
 
-  /* KEYBOARD HINT */
+
+  /* ── KBD HINT ── */
   .kbd-hint {
-    position: fixed;
-    top: 20px;
-    right: 24px;
-    font-size: 11px;
-    color: rgba(201,168,76,0.35);
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 1px;
-    z-index: 100;
+    position:fixed; top:20px; right:24px; font-size:11px;
+    color:rgba(201,168,76,0.35); font-family:'Inter',sans-serif; letter-spacing:1px; z-index:100;
+  }
+
+  /* ── QA SLIDE ── */
+  .qa-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; width:100%; max-width:1000px; margin-top:8px; }
+  .qa-card { background:var(--dark3); border:1px solid var(--border); border-radius:10px; padding:20px; text-align:center; }
+  .qa-card .qa-icon { font-size:30px; margin-bottom:10px; }
+  .qa-card .qa-label { font-family:'Cinzel',serif; font-size:12px; color:var(--gold); margin-bottom:6px; letter-spacing:1px; }
+  .qa-card .qa-value { font-family:'Crimson Text',serif; font-size:13px; color:var(--text-muted); line-height:1.5; }
+
+  /* ── TODD OVERLAY ── */
+  @keyframes toddFadeIn {
+    from { opacity:0; transform:scale(0.95); }
+    to   { opacity:1; transform:scale(1); }
+  }
+  @keyframes toddFadeOut {
+    from { opacity:1; transform:scale(1); }
+    to   { opacity:0; transform:scale(0.95); }
+  }
+  .todd-overlay {
+    position:fixed; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    padding:28px; background:rgba(10,10,15,0.95);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity 0.4s ease, visibility 0.4s ease;
+    z-index:300;
+  }
+  .todd-overlay.visible {
+    opacity:1; visibility:visible; pointer-events:auto;
+  }
+  .todd-overlay img {
+    max-width:100%; max-height:100%; width:auto; height:auto;
+    border-radius:18px; box-shadow:0 0 80px rgba(0,0,0,0.7);
+    animation:toddFadeIn 1.2s ease-out forwards;
+    cursor:pointer;
+  }
+  .todd-overlay img.fade-out {
+    animation:toddFadeOut 0.6s ease-out forwards;
   }
 </style>
 </head>
 <body>
 
-<div class="progress-bar" id="progress"></div>
-<div class="dots" id="dots"></div>
+<div class="progress-bar" id="progress" style="width:6.25%"></div>
+<div class="dots" id="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
 <div class="kbd-hint">← → or click arrows</div>
+
+
 
 <div class="slideshow" id="slides">
 
-<!-- SLIDE 1: COVER -->
+<!-- ══════════════════════════════════════════
+     SLIDE 1 — COVER
+════════════════════════════════════════════ -->
 <div class="slide slide-cover active" id="s1">
   <div class="slide-inner" style="justify-content:center;align-items:center;">
     <div class="emblem">⚔</div>
-    <div class="slide-label">B1874 – Project Management and Software Engineering for Cultural Heritage · University of Bologna</div>
+    <div class="slide-label">B1874 · Project Management and Software Engineering for Cultural Heritage · University of Bologna</div>
     <h1>Claims of Tamriel</h1>
     <div class="divider"></div>
     <p class="subtitle">An OWL Ontology of Contested Narratives, Rival Factions, and Epistemic Conflict<br>in The Elder Scrolls V: Skyrim</p>
@@ -807,20 +461,140 @@
       <span class="tag">SKOS</span>
       <span class="tag">Schema.org</span>
     </div>
-    <div class="course-badge">�‍🏫 Prof. Paolo Bonora · �📁 Atakan Kayı · Ceyda Uyar · Yiğit Ak</div>
+    <div class="course-badge">👨‍🏫 Prof. Paolo Bonora &nbsp;·&nbsp; 📁 Atakan Kayı · Ceyda Uyar · Yiğit Ak</div>
     <div style="margin-top:20px;" class="stats">
       <div class="stat"><span class="num">7</span><span class="lbl">OWL Classes</span></div>
       <div class="stat"><span class="num">16</span><span class="lbl">Claims</span></div>
       <div class="stat"><span class="num">8</span><span class="lbl">Dispute Pairs</span></div>
       <div class="stat"><span class="num">12</span><span class="lbl">Characters</span></div>
       <div class="stat"><span class="num">8</span><span class="lbl">Factions</span></div>
-      <div class="stat"><span class="num">3</span><span class="lbl">Conflict Types</span></div>
+      <div class="stat"><span class="num">5</span><span class="lbl">SPARQL CQs</span></div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 2: PROJECT CHARTER -->
+<!-- ══════════════════════════════════════════
+     SLIDE 2 — WHAT WE BUILT
+════════════════════════════════════════════ -->
 <div class="slide" id="s2">
+  <div class="slide-inner">
+    <div class="slide-label">Project Overview</div>
+    <h2>What We Built</h2>
+    <div class="divider"></div>
+    <p class="subtitle">Claims of Tamriel is a fully static, browser-based knowledge application powered by a formal OWL ontology — no server, no account, no build step required.</p>
+
+    <div class="built-grid">
+      <div class="built-card">
+        <div class="bc-icon">🧠</div>
+        <div class="bc-title">OWL 2 DL Ontology</div>
+        <div class="bc-desc">Formal knowledge base in Turtle serialisation. 7 OWL classes, 16 claims, 8 dispute pairs, 11 SKOS ClaimTypes. Property chains, disjoint axioms, restrictions.</div>
+      </div>
+      <div class="built-card">
+        <div class="bc-icon">🌐</div>
+        <div class="bc-title">Interactive Web App</div>
+        <div class="bc-desc">Single-file HTML/JS interface. War Table, Moral Compass View, Faction Cards, SPARQL Panel, Discovery Panel. Works offline after first load.</div>
+      </div>
+      <div class="built-card">
+        <div class="bc-icon">🔍</div>
+        <div class="bc-title">SPARQL Query Engine</div>
+        <div class="bc-desc">5 competency questions (CQ1–CQ5) executed in-browser. Contradiction discovery, faction conflict matrix, neutral character detection, denial chains.</div>
+      </div>
+      <div class="built-card">
+        <div class="bc-icon">⚔</div>
+        <div class="bc-title">8 Dispute Pairs</div>
+        <div class="bc-desc">Territorial, theological, political, moral, cosmological and supremacist conflicts. Each pair: two claims, two holders, one conflict relation, UESP-sourced evidence.</div>
+      </div>
+      <div class="built-card">
+        <div class="bc-icon">🧭</div>
+        <div class="bc-title">Moral Compass</div>
+        <div class="bc-desc">Visual ideological positioning of all 8 factions across 4 alignment axes. Emergent from ontology structure — not manually drawn.</div>
+      </div>
+      <div class="built-card">
+        <div class="bc-icon">🔗</div>
+        <div class="bc-title">Vocabulary Alignment</div>
+        <div class="bc-desc">Characters align to FOAF, claims to PROV-O, ClaimTypes to SKOS, places to Schema.org. Domain-neutral ontology re-usable beyond Skyrim.</div>
+      </div>
+    </div>
+
+    <div class="cards cols-2" style="max-width:1100px;">
+      <div class="card teal">
+        <h3>🎮 Player Mode</h3>
+        <p>Keep Claims of Tamriel open alongside the game. Compare faction positions, read consequences, and make informed choices before committing to a side — all evidence-grounded.</p>
+      </div>
+      <div class="card blue">
+        <h3>🔬 Research Mode</h3>
+        <p>Enter any contested event or dispute pair and receive a structured, SPARQL-queryable, reasoner-verified knowledge view. Suitable for academic knowledge representation study.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 3 — PROJECT SCOPE
+════════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="slide-label">Scope Definition</div>
+    <h2>Project Scope &amp; Boundaries</h2>
+    <div class="divider"></div>
+
+    <div class="scope-grid">
+      <div class="scope-col in">
+        <div class="scope-col-head in">✓ &nbsp;IN SCOPE</div>
+        <ul>
+          <li>OWL 2 DL ontology in Turtle (.ttl)</li>
+          <li>Exactly 8 dispute pairs, 16 individual claims</li>
+          <li>7 OWL classes with axioms &amp; restrictions</li>
+          <li>11 SKOS ClaimType concepts</li>
+          <li>5 SPARQL competency questions (CQ1–CQ5)</li>
+          <li>Static single-file HTML/JS web interface</li>
+          <li>Moral Compass visualisation (4 alignment axes)</li>
+          <li>FOAF · PROV-O · SKOS · Schema.org alignments</li>
+          <li>All claims sourced to UESP Wiki (sourceURL)</li>
+          <li>OWL 2 DL reasoner compatibility (HermiT / Pellet)</li>
+          <li>Property chain axiom (hasOpposingHolder)</li>
+          <li>GitHub-hosted deliverables &amp; issue tracker</li>
+        </ul>
+      </div>
+      <div class="scope-col out">
+        <div class="scope-col-head out">✕ &nbsp;OUT OF SCOPE</div>
+        <ul>
+          <li>No backend server or database</li>
+          <li>No user authentication or accounts</li>
+          <li>No real-time game data or API integration</li>
+          <li>No claims beyond the 8 defined dispute pairs</li>
+          <li>No claim marked as universally or objectively true</li>
+          <li>No triplestore deployment (Fuseki / GraphDB production)</li>
+          <li>No native mobile application</li>
+          <li>No coverage of DLC factions beyond Dawnguard pair</li>
+          <li>No automatic lore scraping or web crawling</li>
+          <li>No user-generated content or annotations</li>
+          <li>No claim reasoning beyond OWL 2 DL profile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cards cols-3" style="max-width:1100px;">
+      <div class="card gold">
+        <h3>📐 Domain Neutrality</h3>
+        <p>The ontology is designed so that its class hierarchy and property structure can be re-applied to any contested-narrative domain — history, law, politics — by swapping individuals and sourceURLs.</p>
+      </div>
+      <div class="card teal">
+        <h3>🎯 Success Criteria</h3>
+        <p>Reasoner returns consistent; all 5 CQs return expected outputs; Moral Compass renders all 8 factions; all claims traceable to UESP; zero Critical or Major open defects at delivery.</p>
+      </div>
+      <div class="card blue">
+        <h3>⛔ Explicit Constraints</h3>
+        <p>Fully static deployment — no build tools, no npm, no server. Works in any modern browser without installation. Offline-capable after first load. OWL 2 DL profile strictly enforced.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 4 — PROJECT CHARTER
+════════════════════════════════════════════ -->
+<div class="slide" id="s4">
   <div class="slide-inner">
     <div class="slide-label">Deliverable 1 of 8</div>
     <h2>Project Charter</h2>
@@ -829,35 +603,38 @@
       <div class="card gold">
         <h3>📋 Project Identity</h3>
         <ul>
-          <li><b>Product:</b> Claims of Tamriel — Cross-Platform RPG Knowledge Base & Moral Compass</li>
-          <li><b>Course:</b> B1874 – Project Management and Software Engineering for Cultural Heritage — University of Bologna, A.Y. 2025/2026</li>
+          <li><b>Product:</b> Claims of Tamriel — Cross-Platform RPG Knowledge Base &amp; Moral Compass</li>
+          <li><b>Course:</b> B1874 – PMSE for Cultural Heritage · Unibo · A.Y. 2025/2026</li>
           <li><b>PM:</b> Atakan Kayı</li>
-          <li><b>Start:</b> Week 1 · <b>End:</b> Week 14 (May)</li>
+          <li><b>Start:</b> Week 1 &nbsp;·&nbsp; <b>End:</b> Week 14 (May 2026)</li>
           <li><b>Version:</b> v1.0 — 2026-04-28</li>
         </ul>
       </div>
       <div class="card blue">
         <h3>🎯 Project Goal</h3>
-        <p>Build an OWL ontology that models the structure of disagreement in Skyrim, not game facts. Represent competing claims, rival factions, and epistemic conflict as machine-readable, SPARQL-queryable, reasoner-compatible knowledge. Serve both players and researchers.</p>
+        <p>Build an OWL ontology that models the <i>structure</i> of disagreement in Skyrim — not game facts. Represent competing claims, rival factions, and epistemic conflict as machine-readable, SPARQL-queryable, reasoner-compatible knowledge. Serve both players and researchers.</p>
       </div>
       <div class="card teal">
-        <h3>🔭 Scope</h3>
+        <h3>📦 Key Deliverables</h3>
         <ul>
-          <li>8 dispute pairs across 6 claim type categories</li>
-          <li>OWL 2 DL formal ontology in Turtle</li>
-          <li>5 SPARQL competency questions</li>
-          <li>Static web interface (no backend)</li>
-          <li>Domain-neutral architecture</li>
+          <li>D1 — Project Charter (WBS, budget, team, risks)</li>
+          <li>D2 — Gantt Diagram (14-week schedule)</li>
+          <li>D3 — SRS (FR, NFR, user profiles, constraints)</li>
+          <li>D4 — Architecture Diagrams (System + Application)</li>
+          <li>D5 — Sample Use Case</li>
+          <li>D6 — Testing Methodology + TC-04</li>
+          <li>D7 — This Slideshow Presentation</li>
+          <li>D8 — User Documentation &amp; Reference</li>
         </ul>
       </div>
       <div class="card red">
         <h3>⚠ Key Risks</h3>
         <ul>
           <li>Reasoner inconsistency during axiom development</li>
-          <li>Lore ambiguity in source material</li>
-          <li>Scope creep in faction coverage</li>
-          <li>SPARQL query complexity vs. browser feasibility</li>
-          <li>Team availability near deadline</li>
+          <li>Lore ambiguity in UESP source material</li>
+          <li>Scope creep beyond the 8 dispute pairs</li>
+          <li>SPARQL complexity exceeding browser feasibility</li>
+          <li>Team availability compression near deadline</li>
         </ul>
       </div>
     </div>
@@ -865,104 +642,96 @@
       <div class="role-card">
         <div class="icon">🧠</div>
         <div class="name">Atakan Kayı</div>
-        <div class="role-desc">Ontology Design &amp; Knowledge Modelling</div>
+        <div class="role-desc">Project Manager · Ontology Design · Knowledge Modelling</div>
         <span class="gh">@GrandTuvalet</span>
       </div>
       <div class="role-card">
         <div class="icon">🔍</div>
         <div class="name">Ceyda Uyar</div>
-        <div class="role-desc">SPARQL &amp; Knowledge Extraction</div>
+        <div class="role-desc">SPARQL Design · Knowledge Extraction · Lore Research</div>
         <span class="gh">@yunglingwist</span>
       </div>
       <div class="role-card">
         <div class="icon">⚙</div>
         <div class="name">Yiğit Ak</div>
-        <div class="role-desc">Ontology Engineering &amp; Web</div>
+        <div class="role-desc">Ontology Engineering · Web Interface · Testing</div>
         <span class="gh">@yigittakk</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 3: GANTT -->
-<div class="slide" id="s3">
+<!-- ══════════════════════════════════════════
+     SLIDE 5 — GANTT
+════════════════════════════════════════════ -->
+<div class="slide" id="s5">
   <div class="slide-inner">
     <div class="slide-label">Deliverable 2 of 8</div>
-    <h2>Gantt Diagram — Excel-Aligned Sprint Plan</h2>
+    <h2>Gantt Diagram — Sprint Plan</h2>
     <div class="divider"></div>
-    <p class="subtitle">12-week delivery plan with phases, sprint focus and the week-13 wrap-up described in the spreadsheet.</p>
+    <p class="subtitle">14-week delivery plan aligned to the Excel schedule. Five phases, W13 wrap-up buffer.</p>
 
     <div class="gantt-chart">
       <div class="gantt-header">
         <div class="gantt-header-label">Phase / Sprint</div>
         <div class="gantt-weeks">
-          <div class="gantt-week-num">W1</div>
-          <div class="gantt-week-num">W2</div>
-          <div class="gantt-week-num">W3</div>
-          <div class="gantt-week-num">W4</div>
-          <div class="gantt-week-num">W5</div>
-          <div class="gantt-week-num">W6</div>
-          <div class="gantt-week-num">W7</div>
-          <div class="gantt-week-num">W8</div>
-          <div class="gantt-week-num">W9</div>
-          <div class="gantt-week-num">W10</div>
-          <div class="gantt-week-num">W11</div>
-          <div class="gantt-week-num">W12</div>
+          <div class="gantt-week-num">W1</div><div class="gantt-week-num">W2</div>
+          <div class="gantt-week-num">W3</div><div class="gantt-week-num">W4</div>
+          <div class="gantt-week-num">W5</div><div class="gantt-week-num">W6</div>
+          <div class="gantt-week-num">W7</div><div class="gantt-week-num">W8</div>
+          <div class="gantt-week-num">W9</div><div class="gantt-week-num">W10</div>
+          <div class="gantt-week-num">W11</div><div class="gantt-week-num">W12</div>
           <div class="gantt-week-num">W13</div>
         </div>
       </div>
-
       <div class="gantt-row">
-        <div class="gantt-task">Phase One — Research & Requirements</div>
+        <div class="gantt-task">Phase One — Research &amp; Requirements</div>
         <div class="gantt-bars"><div class="gantt-bar s1">W1–W3: Charter, user stories, SRS</div></div>
       </div>
-
       <div class="gantt-row">
         <div class="gantt-task">Sprint 1 — Lore Research</div>
-        <div class="gantt-bars"><div class="gantt-bar s2">W3–W6: Skyrim lore scan, book classification, faction motivations</div></div>
+        <div class="gantt-bars"><div class="gantt-bar s2">W3–W6: Skyrim lore, book classification, faction motivations</div></div>
       </div>
-
       <div class="gantt-row">
-        <div class="gantt-task">Sprint 2 — Synthesis & Ontology</div>
-        <div class="gantt-bars"><div class="gantt-bar s3">W7–W8: Item × claim cross-check, moral compass draft, ClaimType SKOS</div></div>
+        <div class="gantt-task">Sprint 2 — Synthesis &amp; Ontology</div>
+        <div class="gantt-bars"><div class="gantt-bar s3">W7–W8: Claim cross-check, moral compass draft, ClaimType SKOS</div></div>
       </div>
-
       <div class="gantt-row">
-        <div class="gantt-task">Knowledge Population & Ontology</div>
+        <div class="gantt-task">Knowledge Population &amp; Ontology</div>
         <div class="gantt-bars"><div class="gantt-bar s4">W8–W10: OWL classes, restrictions, vocab alignments, individuals</div></div>
       </div>
-
       <div class="gantt-row">
-        <div class="gantt-task">Phase Three — Interface & Validation</div>
-        <div class="gantt-bars"><div class="gantt-bar s5">W10–W13: SPARQL, reasoner checks, usability, delivery prep</div></div>
+        <div class="gantt-task">Phase Three — Interface &amp; Validation</div>
+        <div class="gantt-bars"><div class="gantt-bar s5">W10–W13: SPARQL, reasoner checks, usability, delivery</div></div>
       </div>
-
       <div class="gantt-legend">
-        <div class="legend-item"><span class="legend-box s1"></span> Phase One — Requirements</div>
-        <div class="legend-item"><span class="legend-box s2"></span> Sprint 1 — Lore Research</div>
-        <div class="legend-item"><span class="legend-box s3"></span> Sprint 2 — Synthesis</div>
-        <div class="legend-item"><span class="legend-box s4"></span> Ontology & Population</div>
-        <div class="legend-item"><span class="legend-box s5"></span> Interface & Validation</div>
+        <div class="legend-item"><span class="legend-box s1"></span> Phase One</div>
+        <div class="legend-item"><span class="legend-box s2"></span> Lore Research</div>
+        <div class="legend-item"><span class="legend-box s3"></span> Synthesis</div>
+        <div class="legend-item"><span class="legend-box s4"></span> Ontology &amp; Population</div>
+        <div class="legend-item"><span class="legend-box s5"></span> Interface &amp; Validation</div>
       </div>
     </div>
 
-    <div class="table-wrap" style="margin-top:16px;">
+    <div class="table-wrap">
       <table>
-        <thead><tr><th>Phase/Sprint</th><th>Weeks</th><th>Focus</th><th>Main Deliverables</th><th>Owner</th></tr></thead>
+        <thead><tr><th>Phase</th><th>Weeks</th><th>Focus</th><th>Main Deliverables</th><th>Owner</th></tr></thead>
         <tbody>
-          <tr><td>Phase One</td><td>W1–W3</td><td>Research & Requirements</td><td>Stakeholder analysis, charter, user stories, SRS, sign-off</td><td>Atakan / All</td></tr>
-          <tr><td>Sprint 1</td><td>W3–W6</td><td>Lore Research</td><td>Skyrim lore scan, book reading, faction histories</td><td>All / Ceyda / Atakan</td></tr>
-          <tr><td>Sprint 2</td><td>W7–W8</td><td>Synthesis & Ontology</td><td>Claim cross-check, moral compass, ClaimType SKOS taxonomy</td><td>Ceyda / Atakan</td></tr>
-          <tr><td>Knowledge Population</td><td>W8–W10</td><td>Ontology Engineering</td><td>OWL classes, restrictions, FOAF/PROV alignments, individuals</td><td>Atakan / Ceyda</td></tr>
-          <tr><td>Phase Three</td><td>W10–W13</td><td>Interface & Validation</td><td>SPARQL CQs, reasoner consistency, usability checks, final delivery</td><td>All</td></tr>
+          <tr><td>Phase One</td><td>W1–W3</td><td>Research &amp; Requirements</td><td>Charter, user stories, SRS, sign-off</td><td>Atakan / All</td></tr>
+          <tr><td>Sprint 1</td><td>W3–W6</td><td>Lore Research</td><td>Skyrim lore scan, faction histories, source audit</td><td>All / Ceyda</td></tr>
+          <tr><td>Sprint 2</td><td>W7–W8</td><td>Synthesis &amp; Ontology</td><td>Claim cross-check, moral compass, SKOS taxonomy</td><td>Ceyda / Atakan</td></tr>
+          <tr><td>Knowledge Pop.</td><td>W8–W10</td><td>Ontology Engineering</td><td>OWL classes, restrictions, vocab alignments, individuals</td><td>Atakan / Ceyda</td></tr>
+          <tr><td>Phase Three</td><td>W10–W13</td><td>Interface &amp; Validation</td><td>SPARQL CQs, reasoner checks, usability, final delivery</td><td>All</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 4: SRS -->
-<div class="slide" id="s4">
+<!-- ══════════════════════════════════════════
+     SLIDE 6 — SRS
+════════════════════════════════════════════ -->
+<div class="slide" id="s6">
   <div class="slide-inner">
     <div class="slide-label">Deliverable 3 of 8</div>
     <h2>Software Requirements Specification</h2>
@@ -972,9 +741,9 @@
         <h3>📌 Functional Requirements</h3>
         <ul>
           <li>FR-01: Display all 8 dispute pairs with both claim sides</li>
-          <li>FR-02: Show ClaimType, holder, evidence, and source URL per claim</li>
+          <li>FR-02: Show ClaimType, holder, evidence, sourceURL per claim</li>
           <li>FR-03: Execute SPARQL CQ1–CQ5 via competency panel</li>
-          <li>FR-04: Visualize moral compass and faction ideological positioning</li>
+          <li>FR-04: Visualise moral compass &amp; faction ideological positioning</li>
           <li>FR-05: Detect neutral characters via FILTER NOT EXISTS</li>
           <li>FR-06: Infer opposing holders via property chain axiom</li>
           <li>FR-07: Display SKOS ClaimType hierarchy</li>
@@ -983,12 +752,13 @@
       <div class="card blue">
         <h3>🔧 Non-Functional Requirements</h3>
         <ul>
-          <li>NFR-01: Application must run without a server or build step</li>
-          <li>NFR-02: Works in any modern browser</li>
-          <li>NFR-03: Responsive layout (desktop and mobile)</li>
-          <li>NFR-04: Offline capable after first load</li>
+          <li>NFR-01: Application runs without server or build step</li>
+          <li>NFR-02: Works in any modern browser (Chrome, Firefox, Safari)</li>
+          <li>NFR-03: Responsive layout — desktop and mobile</li>
+          <li>NFR-04: Offline-capable after first load</li>
           <li>NFR-05: OWL 2 DL compliant ontology</li>
           <li>NFR-06: Turtle serialisation for portability</li>
+          <li>NFR-07: Browser SPARQL response under 3 seconds</li>
         </ul>
       </div>
       <div class="card teal">
@@ -996,7 +766,7 @@
         <ul>
           <li><b>Newcomer</b> — first contact with Skyrim lore</li>
           <li><b>World-Builder</b> — exploring factions and narratives</li>
-          <li><b>Storyteller</b> — writing lore-consistent stories</li>
+          <li><b>Storyteller</b> — writing lore-consistent content</li>
           <li><b>Compass-Seeker</b> — making informed moral choices</li>
           <li><b>Researcher</b> — academic knowledge extraction</li>
         </ul>
@@ -1004,88 +774,86 @@
       <div class="card red">
         <h3>⛔ Constraints</h3>
         <ul>
-          <li>No backend — fully static deployment</li>
+          <li>No backend — fully static deployment only</li>
           <li>No claim is marked as universally true</li>
-          <li>No faction is treated as authoritative</li>
-          <li>All claims must have sourceURL from UESP Wiki</li>
+          <li>No faction treated as authoritative</li>
+          <li>All claims must have a UESP Wiki sourceURL</li>
           <li>Every Claim must satisfy all three OWL restrictions</li>
+          <li>OWL 2 DL profile — no Full OWL constructs</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 5: ARCHITECTURE -->
-<div class="slide" id="s5">
-  <div class="slide-inner">
-    <div class="slide-label">Deliverable 4 of 8</div>
-    <h2>System Architecture</h2>
-    <div class="divider"></div>
-    <div class="arch">
-      <div class="arch-layer">
-        <div class="arch-box blue">
-          <h3>👤 Users</h3>
-          <p>Players · Researchers · World-builders</p>
-          <p style="font-size:10px;margin-top:6px;color:rgba(201,168,76,0.5);">Two simultaneous use modes</p>
-        </div>
-      </div>
-      <div class="arch-arrow">→</div>
-      <div class="arch-layer">
-        <div class="arch-box blue" style="flex:1;">
-          <h3>🌐 Interactive Web Client</h3>
-          <p>index.html · War Table · Moral Compass · Claim Browser · Faction Cards · SPARQL Panel · Discovery Panel</p>
-        </div>
-      </div>
-      <div class="arch-arrow">⇄</div>
-      <div class="arch-layer">
-        <div class="arch-box gold">
-          <h3>⚙ Query & Reasoning</h3>
-          <p>SPARQL Engine · OWL 2 DL Reasoner · CQ1–CQ5 · hasOpposingHolder inference · Neutrality detection</p>
-        </div>
-      </div>
-      <div class="arch-arrow">→</div>
-      <div class="arch-layer">
-        <div class="arch-box green">
-          <h3>📚 Ontology KB</h3>
-          <p>.ttl · Claim · Character · Faction · ClaimType · contradicts · disputes · denies · framesAs · PropertyChain</p>
-        </div>
-      </div>
-      <div class="arch-arrow">→</div>
-      <div class="arch-layer">
-        <div class="arch-box orange">
-          <h3>🔗 Vocabularies</h3>
-          <p>FOAF · PROV-O · Schema.org · SKOS · UESP Wiki · In-game texts</p>
-        </div>
-      </div>
+<!-- ══════════════════════════════════════════
+     SLIDE 7 — SYSTEM ARCHITECTURE DIAGRAM
+════════════════════════════════════════════ -->
+<div class="slide" id="s7" style="padding:0;">
+  <div class="diagram-slide-inner">
+    <div class="diagram-title-row">
+      <div class="slide-label">Deliverable 4_0 of 8</div>
+      <h2 style="margin-bottom:0;">System Architecture</h2>
     </div>
-    <div class="card gray" style="max-width:1100px;width:100%;margin-top:8px;padding:12px 18px;">
-      <h3 style="font-size:11px;margin-bottom:8px;">⚙ Optional / Operational Infrastructure</h3>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <span class="tag">Local server</span>
-        <span class="tag">Triplestore (Fuseki / GraphDB)</span>
-        <span class="tag">Protégé</span>
-        <span class="tag">HermiT / Pellet Reasoner</span>
-        <span class="tag">Static hosting</span>
-        <span class="tag">Export / reports</span>
-      </div>
+
+    <div class="diagram-img-wrap" id="sys-img-wrap">
+      <img id="img-sys" class="visible" src="4- Architecture Diagram.png" alt="System Architecture Diagram" style="display:block;">
     </div>
-    <div class="cards cols-2" style="max-width:1100px;">
-      <div class="card teal">
-        <h3>🎮 Player Mode</h3>
-        <p>Follow faction disputes and narrative outcomes simultaneously while playing. The War Table and Event Tracker update based on claim metadata — no manual research needed.</p>
+
+    <div class="diagram-caption">
+      <div class="cap-section">
+        <div class="cap-label">What it shows</div>
+        <div class="cap-text">End-to-end data flow from user interaction through the web client, SPARQL/OWL reasoning engine, and into the Turtle knowledge base. Shows optional operational infrastructure (Fuseki, Protégé, HermiT/Pellet) at the periphery.</div>
       </div>
-      <div class="card purple">
-        <h3>🔬 Research Mode</h3>
-        <p>Enter any contested event or dispute pair and immediately receive a structured, evidence-grounded, compact knowledge view. The same claim graph powers both modes.</p>
+      <div class="cap-section">
+        <div class="cap-label">Key layers</div>
+        <div class="cap-text">Users → Interactive Web Client (index.html) ⇄ Query &amp; Reasoning Engine → Ontology Knowledge Base (.ttl) → External Vocabularies (FOAF, PROV-O, SKOS, Schema.org)</div>
+      </div>
+      <div class="cap-section">
+        <div class="cap-label">Design decision</div>
+        <div class="cap-text">No server-side layer by design. All reasoning executes in-browser. The same .ttl file serves both the SPARQL engine and the OWL reasoner, ensuring a single source of truth.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 6: ONTOLOGY CORE -->
-<div class="slide" id="s6">
+<!-- ══════════════════════════════════════════
+     SLIDE 8 — APPLICATION ARCHITECTURE DIAGRAM
+════════════════════════════════════════════ -->
+<div class="slide" id="s8" style="padding:0;">
+  <div class="diagram-slide-inner">
+    <div class="diagram-title-row">
+      <div class="slide-label">Deliverable 4_1 of 8</div>
+      <h2 style="margin-bottom:0;">Application Architecture</h2>
+    </div>
+
+    <div class="diagram-img-wrap" id="app-img-wrap">
+      <img id="img-app" class="visible" src="4.1- Application Diagram.png" alt="Application Architecture Diagram" style="display:block;">
+    </div>
+
+    <div class="diagram-caption">
+      <div class="cap-section">
+        <div class="cap-label">What it shows</div>
+        <div class="cap-text">Internal component breakdown of the index.html application. Sections: War Table, Moral Compass, Claim Browser, Faction Cards, SPARQL Panel, and Discovery Panel — and how they share the claim data model.</div>
+      </div>
+      <div class="cap-section">
+        <div class="cap-label">Data binding</div>
+        <div class="cap-text">Each UI component reads from the embedded Turtle data at load time. No REST calls, no re-fetching. State is held in-memory as parsed JSON during the session.</div>
+      </div>
+      <div class="cap-section">
+        <div class="cap-label">Dual mode</div>
+        <div class="cap-text"><b>Player Mode:</b> War Table + Event Tracker, claim metadata auto-updates. <b>Research Mode:</b> SPARQL Panel + Discovery Panel with CQ1–CQ5 queries and emergent knowledge output.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 9 — ONTOLOGY CORE
+════════════════════════════════════════════ -->
+<div class="slide" id="s9">
   <div class="slide-inner">
-    <div class="slide-label">Ontology Core</div>
+    <div class="slide-label">Ontology Design</div>
     <h2>The Knowledge Base</h2>
     <div class="divider"></div>
     <div class="cards cols-3">
@@ -1104,9 +872,9 @@
       <div class="card teal">
         <h3>🔗 Conflict Relations</h3>
         <ul>
-          <li><b>contradicts</b> — SymmetricProperty. Strict logical opposition (6 pairs)</li>
-          <li><b>disputes</b> — SymmetricProperty. Interpretive difference (2 pairs)</li>
-          <li><b>denies</b> — IrreflexiveProperty. Directional propaganda (Talos pair only)</li>
+          <li><b>contradicts</b> — SymmetricProperty · strict logical opposition (6 pairs)</li>
+          <li><b>disputes</b> — SymmetricProperty · interpretive difference (2 pairs)</li>
+          <li><b>denies</b> — IrreflexiveProperty · directional propaganda (Talos only)</li>
         </ul>
       </div>
       <div class="card blue">
@@ -1120,7 +888,7 @@
         </ul>
       </div>
     </div>
-    <div style="width:100%;max-width:1000px;margin-top:6px;">
+    <div style="width:100%;max-width:1100px;">
       <h3 style="margin-bottom:10px;text-align:center;">The 8 Dispute Pairs</h3>
       <div class="table-wrap">
         <table>
@@ -1141,23 +909,25 @@
   </div>
 </div>
 
-<!-- SLIDE 7: SPARQL -->
-<div class="slide" id="s7">
+<!-- ══════════════════════════════════════════
+     SLIDE 10 — SPARQL
+════════════════════════════════════════════ -->
+<div class="slide" id="s10">
   <div class="slide-inner">
     <div class="slide-label">Ontology — Reasoning</div>
     <h2>SPARQL Competency Questions</h2>
     <div class="divider"></div>
-    <div class="cards cols-2" style="max-width:1000px;">
-      <div class="card gold"><h3>CQ1</h3><p>All contradicting claim pairs with holders and types.</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: contradicts + FILTER(STR(?A) &lt; STR(?B)) to deduplicate</p></div>
-      <div class="card blue"><h3>CQ2</h3><p>Faction conflict matrix — which factions oppose which.</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: memberOf → framesAs → contradicts chain; fully emergent</p></div>
-      <div class="card teal"><h3>CQ3</h3><p>Evidence cited by directly opposing claims.</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: hasEvidence on both sides of contradicts</p></div>
-      <div class="card red"><h3>CQ4</h3><p>Neutral characters (no framesAs assertions).</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: FILTER NOT EXISTS — returns only Jarl Balgruuf</p></div>
+    <div class="cards cols-2" style="max-width:1100px;">
+      <div class="card gold"><h3>CQ1</h3><p>All contradicting claim pairs with holders and types.</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: contradicts + FILTER(STR(?A) &lt; STR(?B)) to deduplicate symmetric pairs</p></div>
+      <div class="card blue"><h3>CQ2</h3><p>Faction conflict matrix — which factions oppose which.</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: memberOf → framesAs → contradicts chain; fully emergent from structure</p></div>
+      <div class="card teal"><h3>CQ3</h3><p>Evidence cited by directly opposing claims (contested artifacts).</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: hasEvidence on both sides of a contradicts relation</p></div>
+      <div class="card red"><h3>CQ4</h3><p>Neutral characters — those with no framesAs assertions.</p><p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Technique: FILTER NOT EXISTS — returns only Jarl Balgruuf the Greater</p></div>
     </div>
-    <div class="card gold" style="max-width:1000px;width:100%;">
+    <div class="card gold" style="max-width:1100px;width:100%;">
       <h3>CQ5 — Directional Denial Chains</h3>
-      <p style="margin-bottom:10px;">Traversal of asymmetric denies relation. Only the Talos pair is bidirectional — marking it as active propaganda, not mere disagreement.</p>
+      <p>Traversal of asymmetric denies relation. Only the Talos pair is bidirectional — marking it as active propaganda, not mere logical disagreement. Queryable and formally provable.</p>
     </div>
-    <h3 style="margin-top:6px;">CQ4 Example — Neutrality Detection</h3>
+    <h3 style="margin-top:4px;">CQ4 Example — Neutrality Detection</h3>
     <div class="code-block">
 <span class="kw">PREFIX</span> : &lt;http://www.semanticweb.org/skyrimontology/&gt;<br>
 <span class="kw">PREFIX</span> rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br><br>
@@ -1173,11 +943,55 @@
   </div>
 </div>
 
-<!-- SLIDE 8: TESTING -->
-<div class="slide" id="s8">
+<!-- ══════════════════════════════════════════
+     SLIDE 11 — USE CASE
+════════════════════════════════════════════ -->
+<div class="slide" id="s11">
+  <div class="slide-inner">
+    <div class="slide-label">Deliverable 5 of 8</div>
+    <h2>Sample Use Case</h2>
+    <div class="divider"></div>
+    <div class="cards cols-2" style="max-width:1100px;">
+      <div class="card gold">
+        <h3>👤 Actors &amp; Goal</h3>
+        <p><b>Main actor:</b> Visitor / Player</p>
+        <p style="margin-top:8px;"><b>Goal:</b> Inspect a disputed faction choice, understand its moral and ideological consequences, and make an informed decision before committing to a side in the game.</p>
+      </div>
+      <div class="card blue">
+        <h3>✅ Preconditions</h3>
+        <ul>
+          <li>skyrim_ontology_v5_0.ttl is loaded</li>
+          <li>All 8 Dispute Pairs are available</li>
+          <li>User has access to index.html in a modern browser</li>
+          <li>No account or installation required</li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="margin-top:4px;">⚔ Basic Flow</h3>
+    <div class="flow">
+      <div class="flow-step"><span class="flow-num">1</span><span class="flow-text">Visitor opens index.html in the browser.</span></div>
+      <div class="flow-step"><span class="flow-num">2</span><span class="flow-text">Application loads Section IV — War Table with all 8 Dispute Pairs.</span></div>
+      <div class="flow-step"><span class="flow-num">3</span><span class="flow-text">Visitor selects: Imperial Sovereignty vs. Nordic Independence.</span></div>
+      <div class="flow-step"><span class="flow-num">4</span><span class="flow-text">Application shows both Claims with holder, ClaimType, evidence strength, conflict relation, sourceURL.</span></div>
+      <div class="flow-step"><span class="flow-num">5</span><span class="flow-text">Visitor opens World Impact Summary to understand game-world consequences.</span></div>
+      <div class="flow-step"><span class="flow-num">6</span><span class="flow-text">Visitor switches to Moral-Compass View to see faction ideological positioning.</span></div>
+      <div class="flow-step"><span class="flow-num">7</span><span class="flow-text">Optionally runs SPARQL competency query CQ2 — faction conflict matrix.</span></div>
+      <div class="flow-step"><span class="flow-num">8</span><span class="flow-text">Returns to War Table and makes an informed, evidence-grounded choice.</span></div>
+    </div>
+    <div class="card teal" style="max-width:1100px;width:100%;">
+      <h3>🔀 Alternative — Player as Guide User</h3>
+      <p>If the user is actively playing the game, they can keep Claims of Tamriel open as a simultaneous reference — comparing faction positions, reading consequences, and checking disputed lore before making a permanent in-game choice.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 12 — TESTING
+════════════════════════════════════════════ -->
+<div class="slide" id="s12">
   <div class="slide-inner">
     <div class="slide-label">Deliverable 6 of 8</div>
-    <h2>Testing Methodology & Test Case</h2>
+    <h2>Testing Methodology &amp; Test Case</h2>
     <div class="divider"></div>
     <div class="cards cols-2">
       <div class="card gold">
@@ -1202,7 +1016,7 @@
         </ul>
       </div>
     </div>
-    <div class="card teal" style="max-width:1000px;width:100%;">
+    <div class="card teal" style="max-width:1100px;width:100%;">
       <h3>🧪 TC-04: SPARQL CQ4 Neutrality Detection</h3>
       <table style="margin-top:10px;">
         <thead><tr><th>Item</th><th>Detail</th></tr></thead>
@@ -1210,62 +1024,123 @@
           <tr><td>Pre-condition</td><td>Reasoner TC-03 passed; ontology loaded in triplestore</td></tr>
           <tr><td>Input</td><td>SPARQL CQ4 query with FILTER NOT EXISTS on framesAs</td></tr>
           <tr><td>Expected output</td><td>Exactly one result: Jarl Balgruuf the Greater</td></tr>
-          <tr><td>Negative test</td><td>Ulfric, Elenwen, Tullius must NOT appear</td></tr>
+          <tr><td>Negative test</td><td>Ulfric, Elenwen, Tullius must NOT appear in results</td></tr>
           <tr><td>Diagnosis if fail</td><td>Check framesAs assertions or AllDisjointClasses consistency</td></tr>
           <tr><td>Result</td><td>✅ PASSED</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="cards cols-3" style="max-width:1000px;">
-      <div class="card gold"><h3>Traceability</h3><p>"No test, no requirement." Every SRS requirement maps to at least one test case ID.</p></div>
-      <div class="card blue"><h3>Exit Criteria</h3><p>0 Critical · 0 Major open · All CQs return expected outputs · Reasoner consistent</p></div>
+    <div class="cards cols-3" style="max-width:1100px;">
+      <div class="card gold"><h3>Traceability</h3><p>"No test, no requirement." Every SRS functional requirement maps to at least one test case ID.</p></div>
+      <div class="card blue"><h3>Exit Criteria</h3><p>0 Critical · 0 Major open · All CQs return expected outputs · Reasoner reports consistent</p></div>
       <div class="card teal"><h3>Defect Handling</h3><p>All failures logged in GitHub Issues with severity, reproduction steps, and corrective action.</p></div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 9: USE CASE -->
-<div class="slide" id="s9">
+<!-- ══════════════════════════════════════════
+     SLIDE 13 — RISK REGISTER
+════════════════════════════════════════════ -->
+<div class="slide" id="s13">
   <div class="slide-inner">
-    <div class="slide-label">Deliverable 5 of 8</div>
-    <h2>Sample Use Case</h2>
+    <div class="slide-label">Risk Management</div>
+    <h2>Risk Register</h2>
     <div class="divider"></div>
-    <div class="cards cols-2" style="max-width:1000px;">
-      <div class="card gold">
-        <h3>👤 Actors & Goal</h3>
-        <p><b>Main actor:</b> Visitor / Player</p>
-        <p style="margin-top:8px;"><b>Goal:</b> Inspect a disputed faction choice, understand its moral and ideological consequences, and make an informed decision before committing to a side in the game.</p>
-      </div>
-      <div class="card blue">
-        <h3>✅ Preconditions</h3>
-        <ul>
-          <li>skyrim_ontology_v5_0.ttl is loaded</li>
-          <li>All 8 Dispute Pairs are available</li>
-          <li>User has access to index.html in a modern browser</li>
-          <li>No account required</li>
-        </ul>
-      </div>
+    <p class="subtitle" style="margin-bottom:10px;">Identified risks, scored by probability × impact, with mitigations and residual status at delivery.</p>
+
+    <div class="risk-table-wrap">
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Risk Description</th>
+            <th>Probability</th>
+            <th>Impact</th>
+            <th>Severity</th>
+            <th>Mitigation Strategy</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>R-01</b></td>
+            <td>OWL reasoner reports inconsistency after new axiom or individual added</td>
+            <td>Medium</td>
+            <td>High</td>
+            <td><span class="sev high">High</span></td>
+            <td>Run HermiT consistency check after every ontology edit. AllDisjointClasses declared early to surface conflicts immediately.</td>
+            <td>✅ Resolved</td>
+          </tr>
+          <tr>
+            <td><b>R-02</b></td>
+            <td>Lore ambiguity — UESP source material contradicts or is incomplete</td>
+            <td>High</td>
+            <td>Medium</td>
+            <td><span class="sev high">High</span></td>
+            <td>Every claim must cite a specific UESP page as sourceURL. Ambiguous entries escalated to team and resolved with majority vote documented in GitHub Issues.</td>
+            <td>✅ Resolved</td>
+          </tr>
+          <tr>
+            <td><b>R-03</b></td>
+            <td>Scope creep — team adds factions or claims beyond the 8 defined pairs</td>
+            <td>Medium</td>
+            <td>Medium</td>
+            <td><span class="sev medium">Medium</span></td>
+            <td>WBS hard limit: exactly 8 pairs. Any addition requires PM sign-off and schedule impact review. Change freeze from W10 onward.</td>
+            <td>✅ Contained</td>
+          </tr>
+          <tr>
+            <td><b>R-04</b></td>
+            <td>SPARQL query complexity exceeds in-browser engine capability</td>
+            <td>Low</td>
+            <td>High</td>
+            <td><span class="sev medium">Medium</span></td>
+            <td>Test each CQ in-browser before finalising. Property chain and NOT EXISTS patterns validated in Sprint 2. Fallback: simplify to SELECT-only if needed.</td>
+            <td>✅ Resolved</td>
+          </tr>
+          <tr>
+            <td><b>R-05</b></td>
+            <td>Team availability compressed near submission deadline (W13–W14)</td>
+            <td>Low</td>
+            <td>Medium</td>
+            <td><span class="sev low">Low</span></td>
+            <td>W13 designated as buffer week with no new features. All deliverables drafted by W12. Async review via GitHub pull requests.</td>
+            <td>✅ Mitigated</td>
+          </tr>
+          <tr>
+            <td><b>R-06</b></td>
+            <td>Ontology vocabulary alignment breaks OWL 2 DL profile (e.g. PROV-O import)</td>
+            <td>Low</td>
+            <td>High</td>
+            <td><span class="sev medium">Medium</span></td>
+            <td>Alignments declared as annotation properties only. No OWL import of external ontologies. Profile validated in Protégé DL expressivity checker after each alignment addition.</td>
+            <td>✅ Resolved</td>
+          </tr>
+          <tr>
+            <td><b>R-07</b></td>
+            <td>UESP sourceURL link becomes unreachable before submission</td>
+            <td>Low</td>
+            <td>Low</td>
+            <td><span class="sev low">Low</span></td>
+            <td>Source audit in W12 — all sourceURLs verified live. Archived snapshots noted in GitHub if a URL changes.</td>
+            <td>✅ Mitigated</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <h3 style="margin-top:4px;">⚔ Basic Flow</h3>
-    <div class="flow">
-      <div class="flow-step"><span class="flow-num">1</span><span class="flow-text">Visitor opens index.html in the browser.</span></div>
-      <div class="flow-step"><span class="flow-num">2</span><span class="flow-text">Application loads Section IV — War Table with all 8 Dispute Pairs.</span></div>
-      <div class="flow-step"><span class="flow-num">3</span><span class="flow-text">Visitor selects: Imperial Sovereignty vs. Nordic Independence.</span></div>
-      <div class="flow-step"><span class="flow-num">4</span><span class="flow-text">Application shows both Claims with holder, ClaimType, evidence strength, conflict relation, sourceURL.</span></div>
-      <div class="flow-step"><span class="flow-num">5</span><span class="flow-text">Visitor opens World Impact Summary to understand game-world consequences.</span></div>
-      <div class="flow-step"><span class="flow-num">6</span><span class="flow-text">Visitor switches to Moral-Compass View to see faction ideological positioning.</span></div>
-      <div class="flow-step"><span class="flow-num">7</span><span class="flow-text">Optionally runs a SPARQL competency query from Section V — The Codex.</span></div>
-      <div class="flow-step"><span class="flow-num">8</span><span class="flow-text">Returns to War Table and makes an informed, evidence-grounded choice.</span></div>
-    </div>
-    <div class="card teal" style="max-width:800px;width:100%;">
-      <h3>🔀 Alternative: Player as Guide User</h3>
-      <p>If the user is actively playing the game, they can keep Claims of Tamriel open as a simultaneous guide — comparing faction positions, reading consequences, and checking disputed lore before making a permanent in-game choice.</p>
+
+    <div class="cards cols-3" style="max-width:1100px;">
+      <div class="card red">   <h3>High Severity</h3>  <p>R-01, R-02 — both resolved before W10. Root cause: ontology axiom ordering and source discipline.</p></div>
+      <div class="card gold">  <h3>Medium Severity</h3><p>R-03, R-04, R-06 — all contained or resolved. No schedule impact beyond planned buffer.</p></div>
+      <div class="card green"> <h3>Low Severity</h3>   <p>R-05, R-07 — mitigated via process. Zero open risks at final delivery.</p></div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 10: DISCOVERIES -->
-<div class="slide" id="s10">
+<!-- ══════════════════════════════════════════
+     SLIDE 14 — NON-OBVIOUS DISCOVERIES
+════════════════════════════════════════════ -->
+<div class="slide" id="s14">
   <div class="slide-inner">
     <div class="slide-label">Emergent Knowledge</div>
     <h2>Non-Obvious Discoveries</h2>
@@ -1290,30 +1165,73 @@
       </div>
     </div>
     <div style="margin-top:10px;text-align:center;">
-      <p style="font-family:'Crimson Text',serif;font-style:italic;color:var(--text-muted);font-size:16px;">
+      <p style="font-family:&#39;Crimson Text&#39;,serif;font-style:italic;color:var(--text-muted);font-size:18px;">
         "The ontology does not take sides.<br>It models the structure of taking sides."
       </p>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 11: FINAL -->
-<div class="slide" id="s11">
-  <div class="slide-inner" style="align-items:center;justify-content:center;text-align:center;">
-    <div class="emblem">◆</div>
-    <div class="slide-label">Summary</div>
-    <h1>All Deliverables</h1>
+<!-- ══════════════════════════════════════════
+     SLIDE 15 — DELIVERABLES STATUS
+════════════════════════════════════════════ -->
+<div class="slide" id="s15">
+  <div class="slide-inner" style="align-items:center;">
+    <div class="slide-label">Project Closure</div>
+    <h2>Deliverables Checklist</h2>
     <div class="divider"></div>
-    <div class="cards cols-4" style="max-width:1100px;">
-      <div class="card gold"><h3>1</h3><p>Project Charter<br><small style="color:var(--text-muted)">Scope, risks, WBS, team, budget</small></p></div>
-      <div class="card blue"><h3>2</h3><p>Gantt Diagram<br><small style="color:var(--text-muted)">14-week schedule by week</small></p></div>
-      <div class="card teal"><h3>3</h3><p>SRS Document<br><small style="color:var(--text-muted)">FR, NFR, user profiles, constraints</small></p></div>
-      <div class="card red"><h3>4</h3><p>Architecture Diagrams<br><small style="color:var(--text-muted)">System (4_0) + Application (4_1)</small></p></div>
-      <div class="card gold"><h3>5</h3><p>Sample Use Case<br><small style="color:var(--text-muted)">Actors, basic flow, alternatives</small></p></div>
-      <div class="card blue"><h3>6</h3><p>Testing Methodology<br><small style="color:var(--text-muted)">Methodology + TC-04</small></p></div>
-      <div class="card teal"><h3>7</h3><p>Slideshow<br><small style="color:var(--text-muted)">This presentation</small></p></div>
-      <div class="card red"><h3>8</h3><p>Documentation<br><small style="color:var(--text-muted)">User manual / reference docs</small></p></div>
+
+    <div class="deliv-grid">
+      <div class="deliv-card done">
+        <div class="deliv-num">D1</div>
+        <div class="deliv-name">Project Charter</div>
+        <div class="deliv-desc">Scope, WBS, team roles, risk register, budget estimate</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D2</div>
+        <div class="deliv-name">Gantt Diagram</div>
+        <div class="deliv-desc">14-week schedule, 5 phases, Excel + HTML view</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D3</div>
+        <div class="deliv-name">SRS Document</div>
+        <div class="deliv-desc">FR-01–07, NFR-01–07, user profiles, constraints</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D4_0</div>
+        <div class="deliv-name">System Architecture</div>
+        <div class="deliv-desc">End-to-end layer diagram, data flow, infrastructure</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D4_1</div>
+        <div class="deliv-name">Application Architecture</div>
+        <div class="deliv-desc">Component breakdown, UI sections, data binding model</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D5</div>
+        <div class="deliv-name">Sample Use Case</div>
+        <div class="deliv-desc">Actors, preconditions, 8-step basic flow, 2 alternatives</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D6</div>
+        <div class="deliv-name">Testing Methodology</div>
+        <div class="deliv-desc">7 test levels, severity matrix, TC-04 full test case</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
+      <div class="deliv-card done">
+        <div class="deliv-num">D7</div>
+        <div class="deliv-name">Slideshow</div>
+        <div class="deliv-desc">This 16-slide presentation covering all deliverables</div>
+        <span class="deliv-badge">✓ Complete</span>
+      </div>
     </div>
+
     <div class="stats" style="margin-top:16px;">
       <div class="stat"><span class="num">7</span><span class="lbl">OWL Classes</span></div>
       <div class="stat"><span class="num">16</span><span class="lbl">Claims</span></div>
@@ -1322,26 +1240,76 @@
       <div class="stat"><span class="num">8</span><span class="lbl">Factions</span></div>
       <div class="stat"><span class="num">5</span><span class="lbl">SPARQL CQs</span></div>
       <div class="stat"><span class="num">4</span><span class="lbl">Alignments</span></div>
-      <div class="stat"><span class="num">11</span><span class="lbl">ClaimTypes</span></div>
+      <div class="stat"><span class="num">0</span><span class="lbl">Open Risks</span></div>
     </div>
-    <p style="margin-top:20px;font-style:italic;color:var(--text-muted);font-family:'Crimson Text',serif;font-size:16px;">
-      B1874 – Project Management and Software Engineering for Cultural Heritage · University of Bologna · Prof. Paolo Bonora · A.Y. 2025/2026
-    </p>
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     SLIDE 16 — Q&A / THANK YOU
+════════════════════════════════════════════ -->
+<div class="slide slide-cover" id="s16">
+  <div class="slide-inner" style="justify-content:center;align-items:center;text-align:center;">
+    <div class="emblem">◆</div>
+    <div class="slide-label">B1874 — University of Bologna — A.Y. 2025/2026</div>
+    <h1>Thank You</h1>
+    <div class="divider"></div>
+    <p class="subtitle">Claims of Tamriel — An OWL Ontology of Epistemic Conflict in Skyrim<br>Prof. Paolo Bonora</p>
+
+    <div class="qa-grid">
+      <div class="qa-card">
+        <div class="qa-icon">🧠</div>
+        <div class="qa-label">Atakan Kayı</div>
+        <div class="qa-value">Project Manager<br>Ontology Design &amp; Knowledge Modelling<br><span style="color:rgba(201,168,76,0.5);font-size:11px;">@GrandTuvalet</span></div>
+      </div>
+      <div class="qa-card">
+        <div class="qa-icon">🔍</div>
+        <div class="qa-label">Ceyda Uyar</div>
+        <div class="qa-value">SPARQL Design &amp; Knowledge Extraction<br>Lore Research Lead<br><span style="color:rgba(201,168,76,0.5);font-size:11px;">@yunglingwist</span></div>
+      </div>
+      <div class="qa-card">
+        <div class="qa-icon">⚙</div>
+        <div class="qa-label">Yiğit Ak</div>
+        <div class="qa-value">Ontology Engineering<br>Web Interface &amp; Testing<br><span style="color:rgba(201,168,76,0.5);font-size:11px;">@yigittakk</span></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+      <span class="tag">OWL 2 DL</span>
+      <span class="tag">SPARQL</span>
+      <span class="tag">FOAF</span>
+      <span class="tag">PROV-O</span>
+      <span class="tag">SKOS</span>
+      <span class="tag">Schema.org</span>
+      <span class="tag">HermiT</span>
+      <span class="tag">Protégé</span>
+    </div>
+
+    <p style="margin-top:28px;font-style:italic;color:var(--text-muted);font-family:&#39;Crimson Text&#39;,serif;font-size:17px;">
+      "The ontology does not take sides. It models the structure of taking sides."
+    </p>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end slideshow -->
+
+<div id="todd-overlay" class="todd-overlay" onclick="hideTodd()">
+  <img id="todd-img" src="Todd.jpg" alt="Todd">
 </div>
 
 <!-- NAVIGATION -->
 <nav>
-  <button onclick="changeSlide(-1)" title="Previous (←)">&#8592;</button>
-  <span class="slide-counter" id="counter">1 / 11</span>
-  <button onclick="changeSlide(1)" title="Next (→)">&#8594;</button>
+  <button onclick="changeSlide(-1)" title="Previous (←)">←</button>
+  <span class="slide-counter" id="counter">7 / 16</span>
+  <button onclick="changeSlide(1)" title="Next (→)">→</button>
 </nav>
 
 <script>
   const slides = document.querySelectorAll('.slide');
-  const total = slides.length;
+  const total  = slides.length;
   let cur = 0;
 
   // Build dots
@@ -1359,19 +1327,46 @@
     cur = (n + total) % total;
     slides[cur].classList.add('active');
     dotsEl.children[cur].classList.add('active');
-    document.getElementById('counter').textContent = (cur+1) + ' / ' + total;
-    document.getElementById('progress').style.width = ((cur+1)/total*100) + '%';
+    document.getElementById('counter').textContent = (cur + 1) + ' / ' + total;
+    document.getElementById('progress').style.width = ((cur + 1) / total * 100) + '%';
+    
+    // Show/hide Todd overlay on slide 16
+    const toddOverlay = document.getElementById('todd-overlay');
+    const toddImg = document.getElementById('todd-img');
+    if (toddOverlay && toddImg) {
+      if (cur === 15) { // Slide 16 (0-indexed)
+        toddOverlay.classList.add('visible');
+        toddImg.classList.remove('fade-out');
+      } else {
+        hideTodd();
+      }
+    }
   }
 
-  function changeSlide(dir) { goTo(cur + dir); }
+  function changeSlide(dir) {
+    const newIndex = cur + dir;
+    if (newIndex >= 0 && newIndex < total) {
+      goTo(newIndex);
+    }
+  }
+
+  function hideTodd() {
+    const toddOverlay = document.getElementById('todd-overlay');
+    const toddImg = document.getElementById('todd-img');
+    if (toddOverlay && toddImg) {
+      toddImg.classList.add('fade-out');
+      toddOverlay.classList.remove('visible');
+      setTimeout(() => { if (toddImg) toddImg.classList.remove('fade-out'); }, 600);
+    }
+  }
 
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
   });
 
-  // Init progress
-  document.getElementById('progress').style.width = (1/total*100) + '%';
+  document.getElementById('progress').style.width = (1 / total * 100) + '%';
 </script>
-</body>
-</html>
+
+
+</body></html>
